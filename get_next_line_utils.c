@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: looi <looi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: leheng <leheng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:24:47 by leheng            #+#    #+#             */
-/*   Updated: 2022/11/10 21:09:20 by looi             ###   ########.fr       */
+/*   Updated: 2022/11/11 17:41:03 by leheng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_null(char *buff)
 	{
 		if (*buff == '\0')
 			return (1);
-		*buff++;
+		buff++;
 	}
 	return (0);
 }
@@ -42,13 +42,12 @@ char	*ft_strjoin(char *txt, char *buff)
 
 	cbuff = ft_strlen(buff);
 	ctxt = ft_strlen(txt);
-	new = malloc(sizeof(char) * (cbuff + ctxt + 1));
+	new = malloc(sizeof(char) * (cbuff + ctxt + 100));
 	if (!(new))
 		return (NULL);
 	i = 0;
 	while (i < ctxt)
-		;
-	*new ++ = txt[i++];
+		*new ++ = txt[i++];
 	i = 0;
 	while (i < cbuff)
 		*new ++ = buff[i++];
